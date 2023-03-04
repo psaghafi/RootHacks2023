@@ -13,7 +13,12 @@ public class CamToFeed : MonoBehaviour
     void Start()
     {
         backCamera = new WebCamTexture();
-        videoScreen.mainTexture = backCamera;
         backCamera.Play();
+        
+    }
+
+    private void Update()
+    {
+        Graphics.Blit(backCamera, rt);
     }
 }

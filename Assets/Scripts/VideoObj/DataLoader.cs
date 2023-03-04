@@ -14,6 +14,7 @@ public class DataLoader : MonoBehaviour
 {
     string persistPath;
     public bool Reader = true;
+    public bool debug = false; // delete/put/store livepeer
     public bool DisplayError;
     public GameObject NewComer;
 
@@ -87,6 +88,20 @@ public class DataLoader : MonoBehaviour
     {
         StartCoroutine(Download());
 
+    }
+
+    public string delStr = "";
+    
+
+    private void OnEnable()
+    {
+        if (debug)
+        {
+            if (delStr != "")
+            {
+                StartCoroutine(Delete(delStr));
+            }
+        }
     }
 
 }

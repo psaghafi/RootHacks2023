@@ -25,7 +25,7 @@ public class ClipRenderer : MonoBehaviour
                 VideoPlayer.controlledAudioTrackCount = 1;
                 VideoPlayer.Play();
             }
-            catch (Exception ex) { PlayStatic(); }
+            catch (Exception ex) { print("Error!"); }
         }
     }
 
@@ -49,7 +49,7 @@ public class ClipRenderer : MonoBehaviour
                 VideoPlayer.controlledAudioTrackCount = 1;
                 VideoPlayer.Play();
             }
-            catch (Exception ex) { PlayStatic(); }
+            catch (Exception ex) { print("Error!"); }
         }
     }
     public void PlayStatic()
