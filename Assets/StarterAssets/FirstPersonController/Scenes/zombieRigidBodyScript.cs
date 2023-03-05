@@ -4,16 +4,31 @@ using UnityEngine;
 
 public class zombieRigidBodyScript : MonoBehaviour
 {
-    public Transform GameObject;
+    public GameObject Player;
+    public float Speed;
+
+    public bool ActiveZ = false;
+    public Vector3 dist;
+    
+    //public Transform GameObject;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Player = GameObject.Find("GameObject");
+        Speed = 10;
     }
 
     // Update is called once per frame
     void Update()
     {
-//        Vector3
+        dist = Player.transform.position - transform.position;
+        print("Distance: " + dist.magnitude);
+        //Vector3 direction = GameObject.position - transform.position;
+        //Debug.Log(direction);
+        if (dist.magnitude <= 30)
+        {
+            Vector3 direction = (Player.transform.position - transform.position).normalized;
+            this.transform.Translate(direction * Speed * Time.deltaTime);
+        }
     }
 }
