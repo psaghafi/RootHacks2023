@@ -9,6 +9,7 @@ public class zombieRigidBodyScript : MonoBehaviour
 
     public bool ActiveZ = false;
     public Vector3 dist;
+    public float a;
     
     //public Transform GameObject;
     // Start is called before the first frame update
@@ -23,9 +24,10 @@ public class zombieRigidBodyScript : MonoBehaviour
     {
         dist = Player.transform.position - transform.position;
         print("Distance: " + dist.magnitude);
+        a = dist.magnitude;
         //Vector3 direction = GameObject.position - transform.position;
         //Debug.Log(direction);
-        if (dist.magnitude <= 30)
+        if (true)
         {
             Vector3 direction = (Player.transform.position - transform.position).normalized;
             this.transform.Translate(direction * Speed * Time.deltaTime);
