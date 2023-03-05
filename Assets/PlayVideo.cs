@@ -26,7 +26,7 @@ public class PlayVideo : MonoBehaviour
         {
             if (ind >= 0 && Game_Data.Videos != null && vp.url != Game_Data.Videos[ind].downloadUrl)
             {
-                print("PLAY!");
+                print("PLAY! " + ind);
                 r.PlayIndex(ind);
                 if (UI != null)
                     UI.SetActive(true);
@@ -40,6 +40,14 @@ public class PlayVideo : MonoBehaviour
                         UI.SetActive(true);
                 }
             }
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKey("x"))
+        {
+            r.Stop();
         }
     }
 }

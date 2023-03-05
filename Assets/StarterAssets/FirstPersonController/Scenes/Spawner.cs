@@ -10,7 +10,7 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.CapsLock))
+        if(Input.GetKeyDown(KeyCode.C))
         {
             Instantiate(zombiePrefab,transform.position, Quaternion.identity );
         }

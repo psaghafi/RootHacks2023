@@ -14,6 +14,6 @@ public class zombieRigidBodyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3
+//        Vector3
     }
 }

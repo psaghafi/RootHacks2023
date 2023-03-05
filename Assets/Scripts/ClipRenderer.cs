@@ -12,7 +12,14 @@ public class ClipRenderer : MonoBehaviour
     // Start is called before the first frame update
     void OnEnable()
     {
+        VideoPlayer.enabled = true;
         PlayIndex(index);
+    }
+
+    public void Stop()
+    {
+        VideoPlayer.enabled = false;
+        VideoPlayer.Stop();
     }
     public void PlayIndex(int i)
     {
@@ -20,6 +27,7 @@ public class ClipRenderer : MonoBehaviour
         {
             try
             {
+                VideoPlayer.enabled = true;
                 VideoPlayer.url = Game_Data.Videos[i].downloadUrl;
                 VideoPlayer.source = VideoSource.Url;
                 VideoPlayer.controlledAudioTrackCount = 1;
@@ -44,6 +52,7 @@ public class ClipRenderer : MonoBehaviour
         {
             try
             {
+                VideoPlayer.enabled = true;
                 VideoPlayer.url = Game_Data.Videos[index].downloadUrl;
                 VideoPlayer.source = VideoSource.Url;
                 VideoPlayer.controlledAudioTrackCount = 1;
@@ -56,6 +65,7 @@ public class ClipRenderer : MonoBehaviour
     {
         if (Game_Data.Videos.Count > 0)
         {
+            VideoPlayer.enabled = true;
             VideoPlayer.url = Game_Data.Videos[Game_Data.Videos.Count - 1].downloadUrl;
             VideoPlayer.source = VideoSource.Url;
             VideoPlayer.controlledAudioTrackCount = 1;
