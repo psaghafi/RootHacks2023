@@ -8,11 +8,9 @@ public class Spawner : MonoBehaviour
     public GameObject zombiePrefab;
 
     // Update is called once per frame
-    void Update()
+    void OnEnable()
     {
-        if(Input.GetKeyDown(KeyCode.C))
-        {
+
             Instantiate(zombiePrefab,transform.position, Quaternion.identity );
-        }
     }
 }
